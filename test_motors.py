@@ -1,8 +1,10 @@
 from st3215 import ST3215
 
 servo = ST3215("/dev/ttyAMA3")
+
+servo_ID= int (input ("Choose your servo ID: "))
+
 while True :
-    print("give an angle : .. ")
-    a = int (input ())
-    servo.WritePosition(2, a)
+    angle = int (input ("give an angle : "))
+    servo.WritePosition(servo_ID, angle)
     print("task Done ...")
