@@ -12,7 +12,7 @@ print("Current ID is : ",old_ID[0])
 
 New_ID = int(input("Type the new ID and press ENTER "))
 
-if ((New_ID > 0) and (New_ID < 254) ) :
+if (0< New_ID < 254) :
     print("Changing ID ..." )
     servo.ChangeId(old_ID[0], New_ID)
     current_ID= servo.ListServos()

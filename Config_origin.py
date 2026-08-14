@@ -1,11 +1,13 @@
 from st3215 import ST3215
 
 servo = ST3215("/dev/ttyAMA3")
-
+valeur =servo.ReadPosition(2)
+servo.WritePosition(2,valeur)
 servo_ID= int (input ("Choose your servo ID: "))
-print("This actual position is : ", servo.ReadPosition(servo_ID))
-while True :
-    print(servo.ReadStatus(servo_ID))
-    angle = int (input ("give an angle : "))
-    servo.WritePosition(servo_ID, angle)
-    print("task Done ...")
+
+
+min_pos , max_pos =servo.TareServo(servo_ID)
+
+# S= servo.getBlockPosition(servo_ID)
+# print(S)
+# servo.StopServo(servo_ID)
