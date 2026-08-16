@@ -5,8 +5,8 @@ valeur =servo.ReadPosition(2)
 servo.WritePosition(2,valeur)
 servo_ID= int (input ("Choose your servo ID: "))
 
-
-min_pos , max_pos =servo.TareServo(servo_ID)
+servo.DefineMiddle(servo_ID)
+#min_pos , max_pos =servo.TareServo(servo_ID)
 
 # S= servo.getBlockPosition(servo_ID)
 # print(S)
