@@ -7,9 +7,11 @@ servo = ST3215("/dev/ttyAMA3")
 
 servo_ID= servo.ListServos
 
-def map(x , in_min , in_max, out_min , out_max ):
 
-    out = ((x-in_min)*((out_max-out_min)/(in_max-in_min)))+out_min
+
+def val_map(value , in_min , in_max, out_min , out_max ): 
+
+    out = ((value-in_min)*((out_max-out_min)/(in_max-in_min)))+out_min 
 
     return out
 while True :
