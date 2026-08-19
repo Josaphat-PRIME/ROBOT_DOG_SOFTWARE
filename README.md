@@ -38,3 +38,8 @@ In this step, you need to add permissions on your OS so that your code can write
 after that reboot your computer and check if any program use the same port as you by this command (choose the right port in your case)
 
     sudo lsof /dev/ttyAMA3 
+
+### TOOLS 
+in the tools section you can find some useful pyhon files that can help you to easy configure your robot such as 
+    Config_middle.py 
+Just run it and follow the guidlines it allow to set the middle point of your servo 
