@@ -15,7 +15,7 @@ Depending on the port you wish to enable, add this to the end of your config fil
     dtoverlay=uart3
     dtoverlay=uart4
 
-i recommande you to just activate the port your wish tu use and follow the table bellow to find the correct GPIO 
+i recommand you to just activate the port your wish tu use and follow the table bellow to find the correct GPIO 
 
 ### Table of UART pin on RPI4
 | uart port  |     TXD      |     RXD      | Communication Port  |
