@@ -19,7 +19,11 @@ print("Current servo value is : " , old_value )
 
 print("Setting middle ... ")
 
+servo.UnLockEprom(servo_ID)
+
 servo.DefineMiddle(servo_ID)
+
+servo.LockEprom(servo_ID)
 
 new_value = servo.ReadPosition(servo_ID)
 
