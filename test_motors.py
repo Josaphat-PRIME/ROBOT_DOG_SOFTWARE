@@ -5,7 +5,6 @@ servo_min = 0
 servo_max = 4095
 
 
-
 servo_ID = 2
 
 def val_map(value , in_min , in_max, out_min , out_max ): 
