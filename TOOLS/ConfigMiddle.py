@@ -1,6 +1,7 @@
 ### Before start make shure that only one servo is connected to the servo driver and make shure to choose the right port
 
 from st3215 import ST3215
+import time
 
 servo = ST3215("COM6")
 
@@ -24,7 +25,7 @@ servo.UnLockEprom(servo_ID)
 servo.DefineMiddle(servo_ID)
 
 servo.LockEprom(servo_ID)
-
+time.sleep(1)
 new_value = servo.ReadPosition(servo_ID)
 
 print("The new servo value is : " ,  new_value )
