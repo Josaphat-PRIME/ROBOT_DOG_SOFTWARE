@@ -20,28 +20,27 @@ def angles(x,z) :
     r = math.sqrt((x**2)+(z**2))
 
     if (abs(lower_leg-upper_leg) <= r <= lower_leg+upper_leg ) :
-        Theta_2 = math.acos((((lower_leg**2)+(upper_leg**2))-(r**2))/(2*lower_leg*upper_leg))
-        Theta_1 =  math.acos((((upper_leg**2)+(r**2)-(lower_leg**2))/(2*upper_leg*r))) + math.atan2(x , z) - (math.pi/2)
+        Theta2 = math.acos((((lower_leg**2)+(upper_leg**2))-(r**2))/(2*lower_leg*upper_leg))
+        Theta1 =  math.acos((((upper_leg**2)+(r**2)-(lower_leg**2))/(2*upper_leg*r))) + math.atan2(x , z) - (math.pi/2)
     #(math.pi) +
 
     # Four-barlinkage conversion
-        A = k2 + math.cos(Theta_2)
-        B = math.sin(Theta_2)
-        C = k3 + k1*math.cos(Theta_2)
+        A = k2 + math.cos(Theta2)
+        B = math.sin(Theta2)
+        C = k3 + k1*math.cos(Theta2)
         R = math.sqrt((A**2)+(B**2))
-        phi = math.atan2(B,A) 
-        Theta_e = abs(phi + math.acos(C/R))
+        alpha = math.atan2(B,A) 
+        phi = abs(alpha + math.acos(C/R))
         #end of the four bars linkages conversion
-        Theta_e = math.degrees(Theta_e)
-        Theta_2 = math.degrees(Theta_2)
-        Theta_1 = math.degrees(Theta_1) % 360 # to normalize the angle (0 < theta_2 < 360)
         
+        phi = math.degrees(phi)
 
-        # print("valeur de Theta_e : " , Theta_e)
-        # print("valeur de Theta_1 : " , Theta_1)
-        # print("valeur de Theta_2 : " , Theta_2)
+        Theta1 = math.degrees(Theta1) % 360 # to normalize the angle (0 < theta_2 < 360)
+        
+        phi = phi + Theta1                # according to our diagram phi' is equal to phi+ Theta_1 so that why i add it to Theta1
 
-        return Theta_1 , Theta_e
+        return Theta1 , phi
+    
     else : 
         print ("Target out of reach")
 
